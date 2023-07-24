@@ -138,9 +138,9 @@ export default class CanvasSelect extends EventBus {
     }
     /** 当前缩放比例 */
     get scale() {
-        if (this.IMAGE_ORIGIN_WIDTH && this.IMAGE_WIDTH) {
+        /*if (this.IMAGE_ORIGIN_WIDTH && this.IMAGE_WIDTH) {
             return this.IMAGE_WIDTH / this.IMAGE_ORIGIN_WIDTH;
-        }
+        }*/
         return 1;
     }
     /** 图片最小边尺寸 */
