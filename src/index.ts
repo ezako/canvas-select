@@ -380,8 +380,8 @@ export default class CanvasSelect extends EventBus {
             this.update();
         } else if ((!this.isMobile && (e as MouseEvent).buttons === 2 && (e as MouseEvent).which === 3) || (this.isMobile && (e as TouchEvent).touches.length === 1 && !this.isTouch2)) {
             // 拖动背景
-            this.originX = Math.round(mouseX - this.remmberOrigin[0]);
-            this.originY = Math.round(mouseY - this.remmberOrigin[1]);
+            this.originX = 0;
+            this.originY = 0;
             this.update();
         } else if (this.isMobile && (e as TouchEvent).touches.length === 2) {
             this.isTouch2 = true
@@ -851,9 +851,9 @@ export default class CanvasSelect extends EventBus {
         this.timer = setTimeout(() => {
             this.ctx.save();
             this.ctx.clearRect(0, 0, this.WIDTH, this.HEIGHT);
-            this.ctx.translate(this.originX, this.originY);
-            if (this.IMAGE_WIDTH && this.IMAGE_HEIGHT) {
-                this.ctx.drawImage(this.image, 0, 0, this.IMAGE_WIDTH, this.IMAGE_HEIGHT);
+            // this.ctx.translate(this.originX, this.originY);
+            if (this.WIDTH && this.HEIGHT) {
+                this.ctx.drawImage(this.image, 0, 0, this.WIDTH, this.HEIGHT);
             }
             let renderList = this.focusMode ? (this.activeShape.type ? [this.activeShape] : []) : this.dataset
             for (let i = 0; i < renderList.length; i++) {
@@ -942,12 +942,12 @@ export default class CanvasSelect extends EventBus {
         this.IMAGE_WIDTH = Math.round(this.IMAGE_ORIGIN_WIDTH * (this.scaleStep >= 0 ? 1.05 : 0.95) ** abs);
         this.IMAGE_HEIGHT = Math.round(this.IMAGE_ORIGIN_HEIGHT * (this.scaleStep >= 0 ? 1.05 : 0.95) ** abs);
         if (byMouse) {
-            this.originX = x - realToLeft * this.scale
-            this.originY = y - realToRight * this.scale
+            this.originX = 0;
+            this.originY = 0;
         } else {
             const scale = this.IMAGE_WIDTH / width
-            this.originX = this.WIDTH / 2 - (this.WIDTH / 2 - this.originX) * scale;
-            this.originY = this.HEIGHT / 2 - (this.HEIGHT / 2 - this.originY) * scale;
+            this.originX = 0;
+            this.originY = 0;
         }
         if (!pure) {
             this.update();
@@ -966,8 +966,8 @@ export default class CanvasSelect extends EventBus {
             this.IMAGE_WIDTH = this.WIDTH;
             this.IMAGE_HEIGHT = this.IMAGE_ORIGIN_HEIGHT / (this.IMAGE_ORIGIN_WIDTH / this.WIDTH);
         }
-        this.originX = (this.WIDTH - this.IMAGE_WIDTH) / 2;
-        this.originY = (this.HEIGHT - this.IMAGE_HEIGHT) / 2;
+        this.originX = 0;
+        this.originY = 0;
         this.update();
     }
     /**
