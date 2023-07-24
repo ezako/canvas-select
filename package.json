@@ -11,7 +11,7 @@
     "dev": "npm run watch & npm run serve"
   },
   "files": [
-    "/lib/src"
+    "lib"
   ],
   "keywords": [
     "canvas",
