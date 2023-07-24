@@ -149,7 +149,7 @@ export default class CanvasSelect extends EventBus {
     }
     /** 图片原始最大边尺寸 */
     get imageOriginMax() {
-        return Math.max(this.IMAGE_ORIGIN_WIDTH, this.IMAGE_ORIGIN_HEIGHT)
+        return Math.max(this.WIDTH, this.HEIGHT)
     }
     /**
      * 合成事件
