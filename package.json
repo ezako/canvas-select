@@ -1,5 +1,5 @@
 {
-  "name": "canvas-select-upalgo",
+  "name": "@ezako/canvas-select",
   "version": "2.14.1",
   "description": "一个用于图片标注的javascript库，基于canvas，简单轻量，支持矩形、多边形、点、折线、圆形。",
   "main": "lib/canvas-select.min.js",
@@ -45,9 +45,9 @@
     "tslib": "^2.4.0",
     "typescript": "^4.6.4"
   },
-  "homepage": "https://github.com/heylight/canvas-select",
+  "homepage": "https://github.com/ezako/canvas-select",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heylight/canvas-select.git"
+    "url": "git+https://github.com/ezako/canvas-select.git"
   }
 }
