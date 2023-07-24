@@ -145,7 +145,7 @@ export default class CanvasSelect extends EventBus {
     }
     /** 图片最小边尺寸 */
     get imageMin() {
-        return Math.min(this.IMAGE_WIDTH, this.IMAGE_HEIGHT)
+        return Math.min(this.WIDTH, this.HEIGHT)
     }
     /** 图片原始最大边尺寸 */
     get imageOriginMax() {
